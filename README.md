@@ -20,6 +20,10 @@ Please complete the following tasks. You may consult with Google and friends, **
 use this endpint to get the list of initial files and folders: 
 http://demo2653115.mockable.io/api/files
 
+## Required libs
+Using all of these is a must:
+- Bootsrap 4
+- SASS
 
 ## Deploying Your Project
 After you've completed your tasks, and you are ready to submit it, do the following:
