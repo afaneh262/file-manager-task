@@ -1,0 +1,36 @@
+  <!-- <p>
+  test-data works!
+</p>
+<ul>
+  <li *ngFor='let x of Data'>{{x.title}} </li>
+</ul> -->
+<table datatable [dtOptions]="dtOptions" *ngIf="Data && Data.length"  class="row-border hover" >
+   <!-- <table datatable [dtOptions]="dtOptions" class="row-border hover" *ngIf="folders && folders.length"> -->
+    <thead class="headtable">
+      <tr>
+        <th><input type="checkbox"/></th>
+        <th>Item Name</th>
+        <th>Owner</th>
+        <th>Date</th>
+        <th>Size</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of Data">
+           
+        <td><input type="checkbox"/></td>
+        <td *ngIf="x.url;else other_content">
+            <img [src]='x.url' width="30px" class="m-r-10">{{x.title}}
+        </td>
+        <ng-template #other_content> <td> <i class="fa fa-folder fa-lg"></i>  {{x.title}} </td></ng-template>
+       <!-- <td><img [src]='x.url' width="30px" class="m-r-10">{{x.title}}</td>-->
+        <td>{{x.owner}}</td>
+        <td>{{x.date}}</td>
+        <td>{{x.size}}</td>
+        <td>
+          <i class="fa fa-ellipsis-h"></i>
+        </td> 
+      </tr>
+    </tbody>
+  </table>

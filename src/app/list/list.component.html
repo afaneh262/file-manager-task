@@ -1,0 +1,29 @@
+ <!-- <div *ngFor="let name of names; let i = index;">
+     <div>{{i}}:&nbsp;{{name}}</div>
+    </div>
+-->
+<table datatable [dtOptions]="dtOptions" class="row-border hover" *ngIf="folders && folders.length">
+    <thead class="headtable">
+      <tr>
+        <th><input type="checkbox"/></th>
+        <th>Item Name</th>
+        <th>Owner</th>
+        <th>Date</th>
+        <th>Size</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let folder of folders">
+           
+        <td><input type="checkbox"/></td>
+        <td><img [src]='folder.image' width="30px" class="m-r-10">{{folder.folderName}}</td>
+        <td>{{folder.owner}}</td>
+        <td>{{folder.Date}}</td>
+        <td>{{folder.Size}}</td>
+        <td><div class="dropdownrow">
+          ...
+        </div></td>
+      </tr>
+    </tbody>
+  </table>
